@@ -1,0 +1,45 @@
+INSERT INTO Player (first_name, last_name, birth_date)
+VALUES ('Maki', 'Andrich', '2004-10-27');
+
+INSERT INTO Player (first_name, last_name, birth_date)
+VALUES ('Mike', 'Johnson', '1999-08-22');
+
+
+INSERT INTO Team (team_name, sport, competitive_level)
+VALUES ('Toronto Blue Jays','Baseball','Major');
+VALUES ('Cleveland Guadians','Baseball','Major');
+VALUES ('Cleveland Monsters','Hockey','Minor');
+VALUES ('Akron Rubber Ducks','Baseball','Minor');
+
+INSERT INTO Season (year)
+VALUES (2025);
+
+INSERT INTO Season (year)
+VALUES (2026);
+
+INSERT INTO Evaluator (first_name, last_name, role)
+VALUES ('Bojan', 'Andrich', 'Vision Therapist');
+
+INSERT INTO Evaluator (first_name, last_name, role)
+VALUES ('Alex', 'Andrich', 'Optometrist');
+
+INSERT INTO StatType (name, data_type,unit)
+VALUES ('top_speed_running', 'float','mph');
+
+INSERT INTO StatType (name, data_type,unit)
+VALUES ('hitting_percent', 'float','percent');
+
+INSERT INTO StatType (name, data_type,unit)
+VALUES ('pitching_velocity', 'float','percent');
+
+
+
+INSERT INTO PlayerTeamSeason (player_id, team_id, season_id, jersey_number, position)
+VALUES (1, 1, 1, 99999, 'nerd');
+
+INSERT INTO PlayerTeamSeason (player_id, team_id, season_id, jersey_number, position)
+VALUES (2, 3, 2, 23, 'pitcher');
+
+INSERT INTO PlayerEvaluation (pts_id, evaluator_id, stat_type_id, value)
+VALUES (1, 2, 1, '15');
+
