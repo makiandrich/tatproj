@@ -1,0 +1,19 @@
+//pull all stats for a player
+
+SELECT 
+    p.first_name,
+    p.last_name,
+    st.name AS stat,
+    pe.value,
+    e.first_name AS evaluator_first,
+    e.last_name AS evaluator_last,
+    s.year,
+    t.team_name
+FROM PlayerEvaluation pe
+JOIN PlayerTeamSeason pts ON pe.pts_id = pts.pts_id
+JOIN Player p ON pts.player_id = p.player_id
+JOIN StatType st ON pe.stat_type_id = st.stat_type_id
+JOIN Evaluator e ON pe.evaluator_id = e.evaluator_id
+JOIN Season s ON pts.season_id = s.season_id
+JOIN Team t ON pts.team_id = t.team_id
+WHERE p.player_id = 1;
