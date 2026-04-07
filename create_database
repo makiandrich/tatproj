@@ -1,0 +1,58 @@
+/*
+CREATE TABLE Player (
+    player_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    birth_date TEXT
+);
+
+CREATE TABLE Team (
+    team_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    team_name TEXT,
+	sport TEXT
+);
+
+CREATE TABLE Season (
+    season_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    year INTEGER
+);
+
+CREATE TABLE PlayerTeamSeason (
+    pts_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    player_id INTEGER,
+    team_id INTEGER,
+    season_id INTEGER,
+    jersey_number INTEGER,
+    position TEXT,
+    FOREIGN KEY (player_id) REFERENCES Player(player_id),
+    FOREIGN KEY (team_id) REFERENCES Team(team_id),
+    FOREIGN KEY (season_id) REFERENCES Season(season_id)
+);
+
+CREATE TABLE Evaluator (
+    evaluator_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    role TEXT
+);
+
+CREATE TABLE StatType (
+    stat_type_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    data_type TEXT,
+	unit TEXT
+	
+);
+
+CREATE TABLE PlayerEvaluation (
+    evaluation_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pts_id INTEGER,
+    evaluator_id INTEGER,
+    stat_type_id INTEGER,
+    value TEXT,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (pts_id) REFERENCES PlayerTeamSeason(pts_id),
+    FOREIGN KEY (evaluator_id) REFERENCES Evaluator(evaluator_id),
+    FOREIGN KEY (stat_type_id) REFERENCES StatType(stat_type_id)
+);
+*/
